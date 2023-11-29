@@ -5,9 +5,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("photo-1589497836818-9ad2fa1df1a0.avif");
+    background-image: url("jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
     background-size: cover;
     backdrop-filter: blur(10px);
+    transition: 0.2s;
 }
 /* photo-1589497836818-9ad2fa1df1a0.avif*/
 
