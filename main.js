@@ -124,6 +124,11 @@ function handleItemAdd() {
         return;
     }
 
+    // listening for keydown event on input field
+    if (event.key == "Enter"){
+      handleItemAdd(); // calling the adding item function, to add an item when we press enter
+    }
+
     /*
       Try adding a new item to your to do list and uncomment the console.log below.
       Then naviagate to your browser and Inspect Element, go to the console and you should see
