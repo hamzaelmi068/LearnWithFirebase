@@ -125,9 +125,11 @@ function handleItemAdd() {
     }
 
     // listening for keydown event on input field
-    if (event.key == "Enter"){
+    textInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter"){
       handleItemAdd(); // calling the adding item function, to add an item when we press enter
     }
+  });
 
     /*
       Try adding a new item to your to do list and uncomment the console.log below.
