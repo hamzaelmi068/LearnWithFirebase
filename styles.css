@@ -7,7 +7,9 @@ body {
     min-height: 100vh;
     background-image: url("photo-1589497836818-9ad2fa1df1a0.avif");
     background-size: cover;
+    backdrop-filter: blur(10px);
 }
+/* photo-1589497836818-9ad2fa1df1a0.avif*/
 
 .signInBtn {
     background-color: #f3f3f3;
@@ -158,5 +160,8 @@ body {
 
 }
 
-
+/*body{
+    backdrop-filter: blur(10px);
+}
+*/
 
