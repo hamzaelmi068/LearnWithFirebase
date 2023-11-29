@@ -13,7 +13,17 @@ body {
 
 .signInBtn {
     background-color: #f3f3f3;
+    transition: background-color 0.3s; /* Add transition for a smooth effect */
+
  }
+ 
+ .signInBtn:hover {
+    background-color: #ddd; /* Change color on hover */
+}
+
+.signInBtn:active {
+    background-color: #aaa; /* Change color on click */
+}
 
 .container {
     background-color:#ffffff;
