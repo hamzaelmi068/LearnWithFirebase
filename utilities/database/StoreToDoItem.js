@@ -33,6 +33,7 @@ export async function storeToDoItem(userId, userEmail, itemText) {
     }
 }
 
+
 // helper function for storeToDoItem that generates a unique Id
 // we need this so that we can get a referance each document
 function generateUniqueId() {

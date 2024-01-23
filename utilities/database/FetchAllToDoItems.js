@@ -1,6 +1,18 @@
 import { db } from "../../firebaseConfig.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
+
+export async function editToDoItem(userId, uid, newText) {
+    try {
+        const userTodoListCollection = collection(db, `todo-list-${userId}`);
+        const docRef = doc(userTodoListCollection, uid);
+
+        await setDoc(docRef, { itemText: newText }, { merge: true });
+    } catch (error) {
+        console.error("Error Editing data:", error);
+        throw new Error("Failed to edit item in collection");
+    }
+}
 export async function fetchAllToDoItems(userId) {
     try {
         
@@ -19,4 +31,7 @@ export async function fetchAllToDoItems(userId) {
         console.error("Error Fetching data:", error);
         throw new Error("Failed to fetch all items in collection");
     }
+
+  
+    
 }

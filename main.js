@@ -4,6 +4,7 @@ import { auth } from "./firebaseConfig.js";
 import { storeToDoItem } from "./utilities/database/StoreToDoItem.js";
 import { fetchAllToDoItems } from "./utilities/database/FetchAllToDoItems.js";
 import { deleteToDoItem } from "./utilities/database/DeleteToDoItem.js";
+import { editToDoItem } from "./utilities/database/FetchAllToDoItems.js";
 
 /*
   HANDLES USER AUTHENTICATION FOR todo.html PAGE
@@ -130,6 +131,23 @@ function handleItemAdd() {
       handleItemAdd(); // calling the adding item function, to add an item when we press enter
     }
   });
+
+  function handleItemEdit(uid) {
+    const textInput = document.getElementById("todo-input");
+    const newText = textInput.value.trim();
+
+    if (newText !== "") {
+        const userId = auth.currentUser.uid;
+        editToDoItem(userId, uid, newText);
+        fetchAndDisplayAllToDoItems(userId);
+    }
+}
+const editButton = document.createElement("button");
+editButton.textContent = "Edit";
+editButton.className = "editBtn";
+editButton.onclick = () => handleItemEdit(element.uid);
+itemDiv.appendChild(editButton);
+
 
     /*
       Try adding a new item to your to do list and uncomment the console.log below.
